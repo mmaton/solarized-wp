@@ -9,6 +9,7 @@
 
 get_header(); ?>
 
+    <div class="overflow-blur top"></div>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -29,6 +30,7 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
+    <div class="overflow-blur bottom"></div>
 
 <?php
 get_sidebar();

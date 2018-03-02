@@ -87,6 +87,25 @@ if ( ! function_exists( 'solarized_wp_setup' ) ) :
         }
         add_action('get_header', 'remove_admin_login_header');
 
+        function custom_excerpt_length( $length ) {
+            return 140;
+        }
+        add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+
+        function excerpt_more( $more ) {
+            return sprintf( '... <a class="read-more" href="%1$s">%2$s</a>',
+                get_permalink( get_the_ID() ),
+                __( 'Continue Reading', 'wp-solarized' )
+            );
+        }
+        add_filter( 'excerpt_more', 'excerpt_more' );
+
+        function disable_comment_url($fields) {
+            unset($fields['url']);
+            return $fields;
+        }
+        add_filter('comment_form_default_fields','disable_comment_url');
+
 	}
 endif;
 add_action( 'after_setup_theme', 'solarized_wp_setup' );
@@ -115,8 +134,8 @@ function solarized_wp_widgets_init() {
 		'description'   => esc_html__( 'Add widgets here.', 'solarized-wp' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
+		'before_title'  => '<h4 class="widget-title">',
+		'after_title'   => '</h4>',
 	) );
 }
 add_action( 'widgets_init', 'solarized_wp_widgets_init' );
