@@ -431,8 +431,12 @@ h1.site-title a {
     list-style-type: none;
 }
 
-.header ul li.current-menu-item a {
+.header ul li.current-menu-item a, .header ul li.current-cat a {
     text-decoration: underline;
+}
+
+.header ul li a {
+    text-decoration: none;
 }
 
 .header ul li:before, ul.menu li.current-menu-item:before {
