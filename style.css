@@ -24,7 +24,7 @@ video {
 
 audio:not([controls]) {
     display: none;
-    height: 0;
+    min-height: 0;
 }
 
 [hidden] {
@@ -96,7 +96,7 @@ small {
 sub,
 sup {
     font-size: 75%;
-    line-height: 0;
+    line-min-height: 0;
     position: relative;
     vertical-align: baseline;
 }
@@ -147,7 +147,7 @@ textarea {
 
 button,
 input {
-    line-height: normal;
+    line-min-height: normal;
 }
 
 button,
@@ -302,24 +302,12 @@ h6 {
     font-size: 1.15em;
 }
 
-.tag {
-    background-color: #073642;
-    color: #d33682;
-    padding: 0 0.2em;
-}
-
 .todo,
 .next,
 .done {
     color: #002b36;
     background-color: #dc322f;
     padding: 0 0.2em;
-}
-
-.tag {
-    -webkit-border-radius: 0.35em;
-    -moz-border-radius: 0.35em;
-    border-radius: 0.35em;
 }
 
 .TODO {
@@ -393,7 +381,7 @@ body {
 
 body > .site {
     display: flex;
-    height: 100%;
+    min-height: 100%;
 }
 
 a {
@@ -402,9 +390,6 @@ a {
 
 body .site > div, body .site > .header {
     padding: 10px;
-    float: left;
-    height: 100%;
-    box-sizing: border-box;
 }
 
 div.header {
@@ -416,7 +401,7 @@ div.header {
     flex-wrap: wrap;
 }
 
-div.header footer {
+div.header .header-footer {
     align-self: flex-end;
 }
 
@@ -424,14 +409,13 @@ div#content {
     width: 80vw;
     background: #002b36;
     position: relative;
-    height: 100%;
+    min-height: 100%;
     padding: 0 1em;
 }
 
 div#content #primary {
-    overflow: scroll;
     position: relative;
-    height: 100%;
+    min-height: 100%;
     padding: 1em 0 2em 0;
     box-sizing: border-box;
 }
@@ -492,7 +476,7 @@ div.overflow-blur.bottom {
 
 img {
     max-width: 100%;
-    height: auto;
+    min-height: auto;
 }
 
 .comment-form label {
@@ -506,23 +490,20 @@ img {
 
 @media only screen and (max-width: 784px) {
     html {
-        height: auto;
+        min-height: auto;
     }
     #page {
         flex-direction: column;
     }
     body .site > div#content, body .site > .header {
         width: auto;
-        height: auto;
+        min-height: auto;
         display: block;
-    }
-    div#content #primary {
-        overflow: visible;
     }
     div.overflow-blur {
         display: none;
     }
-    footer {
+    .header-footer {
         display: none;
     }
 }

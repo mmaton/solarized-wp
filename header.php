@@ -34,22 +34,18 @@
                 <?php
                 endif; ?>
             </div><!-- .site-branding -->
-
-<!--            <nav id="site-navigation" class="main-navigation">-->
-<!--                --><?php
-//                    wp_nav_menu( array(
-//                        'theme_location' => 'menu-1',
-//                        'menu_id'        => 'primary-menu',
-//                    ) );
-//                ?>
-<!--            </nav><!-- #site-navigation -->
             <?php
             get_sidebar();
             ?>
         </header><!-- #masthead -->
-        <?php
-        get_footer();
-        ?>
+        <div id="colophon" class="header-footer">
+            <div class="site-info">
+                <?php
+                /* translators: 1: Theme name, 2: Theme author. */
+                printf( esc_html__( '%1$s by %2$s', 'solarized-wp' ), '<a target="_blank" href="https://github.com/mmaton/solarized-wp">solarized-wp</a>', '<a href="https://mmaton.com">mmaton</a>' );
+                ?>
+            </div><!-- .site-info -->
+        </div><!-- #colophon -->
     </div><!-- #head -->
 
 	<div id="content" class="site-content">
